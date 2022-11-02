@@ -7,7 +7,7 @@ test_task:
     folder: node_modules
     ingerprint_script: cat package-lock.json
     populate_script: yarn install --frozen-lockfile
-  test_script: yarn run lint && yanr run test
+  test_script: yarn run lint && yarn run test
 
 deploy_task:
   only_if: $CIRRUS_BRANCH == 'master'
