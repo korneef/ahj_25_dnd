@@ -1,3 +1,2 @@
+import './css/reset.css';
 import './css/style.css';
-import './js/cardIssuerCheck';
-import './js/cardValidateCheck';
