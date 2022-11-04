@@ -1,7 +1,6 @@
 import htmlElementsForNewTask from './htmlElementsForNewTask';
 import imageCreator from './imageCreator';
-
-const buttonsCreateNewTask = Array.from(document.getElementsByClassName('tasks-column__footer-button'));
+import { buttonsCreateNewTask } from './newTaskButtons';
 
 function creatingNewTask() {
   const button = this;

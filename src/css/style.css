@@ -86,9 +86,7 @@ body {
 }
 
 .tasks-column__task-image-container {
-  height: 250px;
   border-radius: 5px 5px 0 0;
-  background-image: url(../img/cat2.jpeg);
   background-color: #283f4f;
   background-size: contain;
   background-repeat: no-repeat;
@@ -218,6 +216,7 @@ body {
   padding: 5px 10px;
   color: #d9d9d9;
   margin-right: 5px;
+  display: block;
 }
 
 .tasks-column__new-task-button:hover {
@@ -236,6 +235,7 @@ body {
   width: 100%;
   height: 100%;
   opacity: 0;
+  display: block;
 }
 
 .tasks-column__new-task-image-button {
@@ -248,10 +248,34 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-
+  display: block;
 }
 
-.tasks-column__new-task-image-input:hover+.tasks-column__new-task-image-button {
+.tasks-column__new-task-image-input:hover + .tasks-column__new-task-image-button {
   background-color: #314c98;
+  cursor: pointer;
+}
 
+.tasks-column__new-task-image-button:hover {
+  background-color: #314c98;
+  cursor: pointer;
+}
+
+/* .tasks-column__new-task-image-input:hover
+
+.tasks-column__new-task-image-input:hover */
+
+.tasks-column__new-task-cancel-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #d54040;
+  padding: 5px 10px;
+  margin-left: auto;
+  color: #d9d9d9;
+  display:block;
+}
+
+.tasks-column__new-task-cancel-button:hover {
+  background-color: #a33232;
+  cursor: pointer;
 }

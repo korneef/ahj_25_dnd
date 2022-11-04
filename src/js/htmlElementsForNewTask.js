@@ -1,3 +1,6 @@
+import cleaningTaskCreator from './cleaningTaskCreator';
+import createNewCard from './createNewCard';
+
 export default function htmlElementsForNewTask() {
   const htmlElements = {};
   htmlElements.newTaskForm = document.createElement('form');
@@ -15,7 +18,10 @@ export default function htmlElementsForNewTask() {
   newTaskCreateButton.type = 'button';
   newTaskCreateButton.textContent = 'Добавить карточку';
   newTaskCreateButton.className = 'tasks-column__new-task-button';
-  newTaskCreateButton.style.display = 'block';
+
+  newTaskCreateButton.addEventListener('click', (evt) => {
+    createNewCard(evt);
+  })
 
   const newTaskCreateImageGroup = document.createElement('div');
   newTaskCreateImageGroup.className = 'tasks-column__new-task-image-group';
@@ -29,11 +35,21 @@ export default function htmlElementsForNewTask() {
   newTaskCreateImageButton.type = 'button';
   newTaskCreateImageButton.className = 'tasks-column__new-task-image-button';
 
+  const newTaskCreateCanselButton = document.createElement('button');
+  newTaskCreateCanselButton.className = ('tasks-column__new-task-cancel-button');
+  newTaskCreateCanselButton.type = 'button';
+  newTaskCreateCanselButton.textContent = 'Отмена';
+
+  newTaskCreateCanselButton.addEventListener('click', (element) => {
+    cleaningTaskCreator(element);
+  });
+
   newTaskCreateImageGroup.insertAdjacentElement('beforeend', htmlElements.newTaskCreateImageInput);
   newTaskCreateImageGroup.insertAdjacentElement('beforeend', newTaskCreateImageButton);
 
   htmlElements.newTaskForm.insertAdjacentElement('beforeend', newTaskCreateButton);
   htmlElements.newTaskForm.insertAdjacentElement('beforeend', newTaskCreateImageGroup);
+  htmlElements.newTaskForm.insertAdjacentElement('beforeend', newTaskCreateCanselButton);
 
   return htmlElements;
 }
