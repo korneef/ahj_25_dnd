@@ -21,7 +21,7 @@ export default function htmlElementsForNewTask() {
 
   newTaskCreateButton.addEventListener('click', (evt) => {
     createNewCard(evt);
-  })
+  });
 
   const newTaskCreateImageGroup = document.createElement('div');
   newTaskCreateImageGroup.className = 'tasks-column__new-task-image-group';
