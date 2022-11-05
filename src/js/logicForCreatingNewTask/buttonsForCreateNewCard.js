@@ -1,8 +1,10 @@
 import htmlElementsForNewTask from './htmlElementsForNewTask';
 import imageCreator from './imageCreator';
-import { buttonsCreateNewTask } from './newTaskButtons';
+import { buttonsCreateNewTask } from './gettingAddCardButtons';
+import removeNewCardButtons from './cleaningTaskCreator';
 
-function creatingNewTask() {
+function creatingButtonsForNewCard() {
+  removeNewCardButtons();
   const button = this;
 
   const taskColumn = button.closest('.tasks-column');
@@ -22,5 +24,5 @@ function creatingNewTask() {
 }
 
 for (let i = 0; i < buttonsCreateNewTask.length; i += 1) {
-  buttonsCreateNewTask[i].addEventListener('click', creatingNewTask);
+  buttonsCreateNewTask[i].addEventListener('click', creatingButtonsForNewCard);
 }

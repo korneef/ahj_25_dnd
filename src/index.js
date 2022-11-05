@@ -1,3 +1,4 @@
 import './css/reset.css';
 import './css/style.css';
-import './js/taskCreator';
+import './js/logicForCreatingNewTask/buttonsForCreateNewCard';
+import './js/loadCardsFromLocalStorage';

@@ -1,15 +1,17 @@
 import taskDeleted from './taskDeleteButton';
 
-export default class TaskCard {
+export default class Card {
   constructor(textContent, imageUrl, imageHeight) {
     this.textContent = textContent;
     this.imageUrl = imageUrl;
     this.imageHeight = imageHeight;
+    this.createDate = Date.now();
   }
 
   createTaskContainer() {
     const taskContainer = document.createElement('div');
     taskContainer.className = 'tasks-column__task-container';
+    taskContainer.dataset.createDate = this.createDate;
 
     if (this.imageUrl) {
       const imageContainer = document.createElement('div');
