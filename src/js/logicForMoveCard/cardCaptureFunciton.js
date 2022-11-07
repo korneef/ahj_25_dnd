@@ -1,4 +1,4 @@
-import changeCardPosition from '../changeCardPosition';
+import changeCardPosition from '../changeCardPositionInLocalstorage';
 
 const cardField = document.getElementsByClassName('tasks_board')[0];
 
@@ -29,8 +29,11 @@ cardField.addEventListener('mousedown', (evt) => {
   ghostEl.classList.add('tasks-column__task-container');
   ghostEl.classList.add('task-column__ghost-element');
 
-  shiftX = evt.clientX - draggedEl.offsetLeft;
-  shiftY = evt.clientY - draggedEl.offsetTop;
+  shiftX = evt.clientX + window.scrollX - draggedEl.offsetLeft;
+  shiftY = evt.clientY + window.scrollY - draggedEl.offsetTop;
+  draggedEl.style.left = `${evt.clientX - shiftX}px`;
+  draggedEl.style.top = `${evt.clientY - shiftY}px`;
+  draggedEl.style.transformOrigin = `${evt.clientX - draggedEl.offsetLeft}px ${evt.clientY - draggedEl.offsetTop}px`;
 });
 
 document.getElementsByTagName('body')[0].addEventListener('mousemove', (evt) => {
