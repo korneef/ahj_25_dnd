@@ -31,7 +31,6 @@ cardField.addEventListener('mousedown', (evt) => {
 
   shiftX = evt.clientX - draggedEl.offsetLeft;
   shiftY = evt.clientY - draggedEl.offsetTop;
-  // document.getElementsByTagName('body')[0].insertAdjacentElement('afterbegin', draggedEl)
 });
 
 document.getElementsByTagName('body')[0].addEventListener('mousemove', (evt) => {
